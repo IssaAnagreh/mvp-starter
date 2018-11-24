@@ -15,22 +15,38 @@ class App extends React.Component {
     $.ajax({
       url: '/items', 
       success: (data) => {
+        console.log('/: success api GET hit', data)
         this.setState({
-          items: data
+          items : data
         })
       },
       error: (err) => {
-        console.log('err', err);
+        console.log('componentDidMount error', err);
+      }
+    });
+  }
+
+  add(newURL) {
+    $.ajax({
+      type: 'POST',
+      url: '/items',
+      data: {url: newURL},
+      success: (data) => {
+        console.log('/items: success api POST hit')
+      },
+      error: (err) => {
+        console.log('data from Post error: ', newURL)
+        console.log('add error', err);
       }
     });
   }
 
   render () {
-    return (<div>
-      <h1>Item List</h1>
-      <List items={this.state.items}/>
-    </div>)
-  }
+      return (<div>
+        <h1>Gallery</h1>
+        <List items={this.state.items} add={this.add.bind(this)}/>
+      </div>)
+    }
 }
 
 ReactDOM.render(<App />, document.getElementById('app'));

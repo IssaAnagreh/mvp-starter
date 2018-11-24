@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/test');
+//mongoose.connect('mongodb://localhost/mvptest');
+mongoose.connect('mongodb://IssaAnagreh:isa123@ds115434.mlab.com:15434/mvptest')
 
 var db = mongoose.connection;
 
@@ -12,14 +13,13 @@ db.once('open', function() {
 });
 
 var itemSchema = mongoose.Schema({
-  quantity: Number,
-  description: String
+  url: String
 });
 
-var Item = mongoose.model('Item', itemSchema);
+var MVP = mongoose.model('MVP', itemSchema);
 
 var selectAll = function(callback) {
-  Item.find({}, function(err, items) {
+  MVP.find({}, function(err, items) {
     if(err) {
       callback(err, null);
     } else {
@@ -28,4 +28,15 @@ var selectAll = function(callback) {
   });
 };
 
+var save = (data) => {
+  console.log('saving in the dataBase', data)
+  var img = new MVP ({url: data.url})
+  console.log('new image model',img)
+  img.save( function (err) {
+    if (err) reject(err);
+    console.log('saved!')
+  })
+}
+
 module.exports.selectAll = selectAll;
+module.exports.save = save;
