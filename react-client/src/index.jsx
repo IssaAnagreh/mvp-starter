@@ -68,7 +68,7 @@ class App extends React.Component {
   render () {
       return (<div>
         <h1>Gallery</h1>
-        <input id='username' placeholder="Insert username" onChange={this.onAddName.bind(this)}/>
+        <input id='username' style={{'width':'162px'}} placeholder="Insert username or description" onChange={this.onAddName.bind(this)}/>
         <List items={this.state.items} add={this.add.bind(this)} remove={this.remove.bind(this)} user={this.state.newName} />
       </div>)
     }

@@ -48,6 +48,8 @@ body {
 	width: 100px;
 	height: 21.5px;
 	cursor: pointer;
+	background-color: #F5F5F5;
+
 }
 
 #url {

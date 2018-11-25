@@ -72,18 +72,20 @@ class List extends React.Component {
            <button id="delete" onClick={this.goToRemove.bind(this)}>
             delete
            </button>
-           <dev>
+
+           <div className="container">
            <ListItem imgs={this.props.items} img={this.props.items[this.state.number]} />
            <br />
 
-           <button id="prev" onClick={this.toPrev.bind(this)}>
+           <button id="prev" className="btn" onClick={this.toPrev.bind(this)}>
             &#8592;
            </button>
 
            <button id="next" onClick={this.toNext.bind(this)}>
             &#8594;
            </button>
-           </dev>
+           </div>
+
          </div>)
     } else {
       return (<div> estanna shway ya zamm </div>)
