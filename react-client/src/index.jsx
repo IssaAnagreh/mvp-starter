@@ -60,6 +60,8 @@ class App extends React.Component {
   render () {
       return (<div>
         <h1>Gallery</h1>
+        <input id='username' placeholder="Insert username" />
+        <button> send </button>
         <List items={this.state.items} add={this.add.bind(this)} remove={this.remove.bind(this)} />
       </div>)
     }
