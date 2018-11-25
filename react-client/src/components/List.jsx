@@ -12,8 +12,8 @@ class List extends React.Component {
   }
 
   onChange (e) {
-    console.log(e.target.value)
-    if (e.target.value[e.target.value.length - 1] !== ' ') {
+    console.log( e.target.value.includes(' '))
+    if (!e.target.value.includes(' ')) {
       this.setState({
         newURL: e.target.value
       })
