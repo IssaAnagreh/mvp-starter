@@ -88,7 +88,7 @@ class List extends React.Component {
 
          </div>)
     } else {
-      return (<div> estanna shway ya zamm </div>)
+      return (<h1> estanna shway ya zamm </h1>)
     }
   }
 }
