@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import $ from 'jquery';
 import List from './components/List.jsx';
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -41,10 +42,25 @@ class App extends React.Component {
     });
   }
 
+  remove(oldURL) {
+    $.ajax({
+      url: '/items',
+      type: 'DELETE',
+      data: {url: oldURL},
+      success: (data) => {
+        console.log('/items: success api DELETE hit')
+      },
+      error: (err) => {
+        console.log('data from DELETE error: ', oldURL)
+        console.log('add error', err);
+      }
+    });
+  }
+
   render () {
       return (<div>
         <h1>Gallery</h1>
-        <List items={this.state.items} add={this.add.bind(this)}/>
+        <List items={this.state.items} add={this.add.bind(this)} remove={this.remove.bind(this)} />
       </div>)
     }
 }

@@ -38,5 +38,15 @@ var save = (data) => {
   })
 }
 
+var remove = (data) => {
+  console.log('remove from dataBase', data)
+  MVP.deleteOne({ url: data.url }, function (err) {
+    if (err) return (err);
+  });
+  console.log('deleted')
+}
+
+
 module.exports.selectAll = selectAll;
 module.exports.save = save;
+module.exports.remove = remove;

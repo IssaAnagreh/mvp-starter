@@ -12,7 +12,6 @@ class List extends React.Component {
   }
 
   onChange (e) {
-    console.log( e.target.value.includes(' '))
     if (!e.target.value.includes(' ')) {
       this.setState({
         newURL: e.target.value
@@ -54,6 +53,11 @@ class List extends React.Component {
     }
   }
 
+  goToRemove () {
+    this.props.remove(this.props.items[this.state.number].url)
+    window.location.reload();
+  }
+
   render () {
       if (this.props.items.length > 0) {
       return (<div>
@@ -62,6 +66,9 @@ class List extends React.Component {
 
            <p>There are { this.props.items.length } images. </p>
 
+           <button id="next" onClick={this.goToRemove.bind(this)}>
+            delete
+           </button>
            <ListItem imgs={this.props.items} img={this.props.items[this.state.number]} />
            <br />
 
