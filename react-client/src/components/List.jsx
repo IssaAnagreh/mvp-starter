@@ -61,23 +61,26 @@ class List extends React.Component {
   render () {
       if (this.props.items.length > 0) {
       return (<div>
-           <br /> <input id="url" style={{width: '50%'}} placeholder="Insert image URL" onChange={this.onChange.bind(this)}></input> <br />
-           <button id="submit" style={{width: '10%'}} onClick={this.goToAdd.bind(this)}> submit </button>
+           <br /> 
+           <div id='bar'>
+           <input id="url" placeholder="Insert image URL" onChange={this.onChange.bind(this)}></input> <br />
+           <button id="submit" onClick={this.goToAdd.bind(this)}> submit </button>
+           </div>
 
            <p>There are { this.props.items.length } images. </p>
 
-           <button id="next" onClick={this.goToRemove.bind(this)}>
+           <button id="delete" onClick={this.goToRemove.bind(this)}>
             delete
            </button>
            <ListItem imgs={this.props.items} img={this.props.items[this.state.number]} />
            <br />
 
-           <button id="next" onClick={this.toNext.bind(this)}>
-            next
-           </button>
-
            <button id="prev" onClick={this.toPrev.bind(this)}>
             previous
+           </button>
+
+           <button id="next" onClick={this.toNext.bind(this)}>
+            next
            </button>
          </div>)
     } else {

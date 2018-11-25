@@ -1,0 +1,65 @@
+
+body {
+	background-color: white;
+	font-family: "Times New Roman", Times, serif;
+}
+
+#img {
+	border-style : solid;
+	border-width: 2px;
+	border-color: lightgrey;
+	border-radius: 10px;
+	width: 850px;
+}
+
+#pic {
+	width: 650px;
+	height: 500px;
+}
+
+#next {
+	width: 75px;
+	height: 25px;
+}
+
+#prev {
+	width: 75px;
+	height: 25px;
+}
+
+#delete {
+	width: 75px;
+	height: 20px;
+}
+
+#submit {
+	width: 100px;
+	height: 20px;
+}
+
+#url {
+	height: 25px;
+	width: 500px;
+}
+
+#bar {
+	border-style : solid;
+	border-color: lightgrey;
+	width: 525px;
+	padding-top: 2.5px;
+	border-radius: 10px;
+	border-width: 2px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

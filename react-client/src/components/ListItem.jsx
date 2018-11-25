@@ -6,8 +6,8 @@ class ListItem extends React.Component {
   }
 
   render() {
-  	return <div style={{width: '75%'}}>
-  	  <img style={{height: '300px'}} src={this.props.img.url} /> <br />
+  	return <div id='img' >
+  	  <img id='pic' src={this.props.img.url} /> <br />
     </div>
   }
 }
