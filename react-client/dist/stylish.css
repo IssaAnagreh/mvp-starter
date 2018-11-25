@@ -2,6 +2,7 @@
 body {
 	background-color: white;
 	font-family: "Times New Roman", Times, serif;
+	margin: 0;
 }
 
 #img {
@@ -78,11 +79,22 @@ button {
     text-align: center;
 }
 
-/*
-top margin is 25px
-right margin is 50px
-bottom margin is 75px
-left margin is 100px*/
+#nav {
+	z-index: 1;
+ 	position: sticky;
+ 	top: 0;
+	display: flex;
+	flex-direction: row;
+	background-color: grey;
+	background-color: orange;
+	height: 40px;
+	width: 100%;
+}
+
+span {
+	margin: 0.5% 0% 0% 47%;
+	font-size: 25px;
+}
 
 
 
