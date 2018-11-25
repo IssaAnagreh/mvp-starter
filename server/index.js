@@ -23,21 +23,17 @@ app.use(express.static(__dirname + '/../react-client/dist'));
 
 app.get('/items', function (req, res) {
 	console.log('look at the server terminal: in get')
-	// res.end( JSON.stringify([{
- //        url: `https://upload.wikimedia.org/wikipedia/commons/a/af/All_Gizah_Pyramids.jpg`
- //      }]) )
   items.selectAll(function(err, data) {
     if(err) {
       res.sendStatus(500);
     } else {
-    	console.log(data)
       res.json(data);
     }
   });
 });
 
 app.post('/items', function (req, res) {
-	console.log('look at the server terminal: in post', req.body)
+	console.log('look at the server terminal: in post')
 	var url = req.body
 	db.save(url)
 });

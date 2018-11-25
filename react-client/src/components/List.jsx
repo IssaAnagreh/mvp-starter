@@ -12,9 +12,17 @@ class List extends React.Component {
   }
 
   onChange (e) {
-    this.setState({
-      newURL: e.target.value
-    })
+    console.log(e.target.value)
+    if (e.target.value[e.target.value.length - 1] !== ' ') {
+      this.setState({
+        newURL: e.target.value
+      })
+    } else {
+      console.log('spaces found in url')
+      this.setState({
+        newURL: 'https://avatars0.githubusercontent.com/u/36266902?v=4'
+      })
+    }
   }
 
   goToAdd() {
@@ -66,7 +74,7 @@ class List extends React.Component {
            </button>
          </div>)
     } else {
-      return (<div> hello </div>)
+      return (<div> estanna shway ya zamm </div>)
     }
   }
 }
