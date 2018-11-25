@@ -77,7 +77,7 @@ class List extends React.Component {
            <ListItem imgs={this.props.items} img={this.props.items[this.state.number]} />
            <br />
 
-           <button id="prev" className="btn" onClick={this.toPrev.bind(this)}>
+           <button id="prev" onClick={this.toPrev.bind(this)}>
             &#8592;
            </button>
 
