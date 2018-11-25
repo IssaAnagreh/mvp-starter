@@ -26,7 +26,7 @@ class List extends React.Component {
 
   goToAdd() {
     console.log("got the URL from the List.jsx, thank you",this.state.newURL)
-    this.props.add(this.state.newURL)
+    this.props.add({url: this.state.newURL, username: this.props.user})
     $('#url').val('');
     window.location.reload();
   }

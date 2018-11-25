@@ -53,11 +53,6 @@ app.delete('/items', function (req, res) {
   db.remove(req.body)
 });
 
-app.post('/login', function (req, res) {
-  console.log('look at the server terminal: in post')
-  var url = req.body
-  db.save(url)
-});
 
 var port = process.env.PORT || 3000;
 app.listen(port, function() {

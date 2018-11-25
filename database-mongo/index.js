@@ -13,7 +13,8 @@ db.once('open', function() {
 });
 
 var itemSchema = mongoose.Schema({
-  url: String
+  url: String,
+  username: String
 });
 
 var MVP = mongoose.model('MVP', itemSchema);
@@ -30,7 +31,7 @@ var selectAll = function(callback) {
 
 var save = (data) => {
   console.log('saving in the dataBase', data)
-  var img = new MVP ({url: data.url})
+  var img = new MVP ({url: data.url, username: data.username})
   console.log('new image model',img)
   img.save( function (err) {
     if (err) reject(err);
